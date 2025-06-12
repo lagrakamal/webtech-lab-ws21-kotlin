@@ -1,0 +1,24 @@
+{
+    "tests": [
+        {
+            "name": "Gradle Test",
+            "setup": "",
+            "run": "./gradlew --no-daemon test",
+            "input": "",
+            "output": "",
+            "comparison": "included",
+            "timeout": 10,
+            "points": 15
+        },
+        {
+            "name": "Gradle Run Test",
+            "setup": "",
+            "run": "./gradlew --no-daemon run",
+            "input": "",
+            "output": "",
+            "comparison": "included",
+            "timeout": 10,
+            "points": 15
+        }
+    ]
+}

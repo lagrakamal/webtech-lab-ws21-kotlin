@@ -1,0 +1,175 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Book API",
+        "version": "1.0",
+        "description": "Sample book API",
+        "contact": {
+            "name": "Boris Dudelsack",
+            "email": "boris.dudelsack@hs-flensburg.de"
+        }
+    },
+    "servers": [
+        {
+            "url": "http://localhost:8080"
+        }
+    ],
+    "paths": {
+        "/{uuid}": {
+            "get": {
+                "tags": [],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    }
+                },
+                "operationId": "get-uuid",
+                "description": "Get a book"
+            },
+            "parameters": [
+                {
+                    "schema": {
+                        "type": "string"
+                    },
+                    "name": "uuid",
+                    "in": "path",
+                    "required": true,
+                    "description": "The UUID of the book"
+                }
+            ],
+            "post": {
+                "operationId": "post-uuid",
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    }
+                },
+                "description": "Update a book",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/BookUpdateRequest"
+                            }
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "operationId": "delete-uuid",
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                },
+                "description": "Delete a book"
+            }
+        },
+        "/": {
+            "get": {
+                "tags": [],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/Book"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "operationId": "get",
+                "description": "Get all books"
+            },
+            "parameters": [],
+            "post": {
+                "operationId": "post",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Book"
+                                }
+                            }
+                        }
+                    }
+                },
+                "description": "Insert a new book",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/BookInsertRequest"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "Book": {
+                "title": "Book",
+                "type": "object",
+                "properties": {
+                    "uuid": {
+                        "type": "string"
+                    },
+                    "author": {
+                        "type": "string"
+                    },
+                    "title": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "uuid",
+                    "author",
+                    "title"
+                ]
+            },
+            "BookInsertRequest": {
+                "title": "BookInsertRequest",
+                "type": "object",
+                "properties": {
+                    "author": {
+                        "type": "string"
+                    },
+                    "title": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "author",
+                    "title"
+                ]
+            },
+            "BookUpdateRequest": {
+                "title": "BookUpdateRequest",
+                "type": "object",
+                "properties": {
+                    "author": {
+                        "type": "string"
+                    },
+                    "title": {
+                        "type": "string"
+                    }
+                }
+            }
+        }
+    }
+}

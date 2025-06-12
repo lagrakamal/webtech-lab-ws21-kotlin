@@ -1,0 +1,36 @@
+= Web- / Mobile-Technologien: Laboraufgabe IX (KW 49)
+Boris Dudelsack <boris.dudelsack@hs-flensburg.de>
+1.0, 2021-11-30
+
+== Kotlin/JS
+
+Implementieren Sie die Gästebuch-Applikation aus der Laboraufgabe 5 mit Hilfe von Kotlin/JS.
+
+== Gästebuch Applikation mit Kotlin/JS
+
+Die Gästebucheinträge werden durch die Klasse `GuestBookEntry` realisiert und sollen nur im Speicher in
+Form einer `MutableList` abgelegt werden. Bitte beachten Sie folgende Sachen:
+
+* Die Applikation soll bestehende Gästebucheinträge innerhalb des HTML Elements `<section class="guestbook">` anzeigen
+* Die Gästebucheinträge MÜSSEN folgende HTML Struktur aufweisen
+
+```html
+<article>
+    <div class="username">...</div>
+    <div class="date">...</div>
+    <p>...</p>
+</article>
+```
+* Es dürfen weitere Elemente hinzugefügt und CSS-Styling angewendet werden, aber die geforderte HTML-Struktur MUSS existieren
+* Es MUSS eine HTML Form mit folgenden Elementen realisiert werden
+
+```html
+<form method="POST" action="/">
+    <input name="username" />
+    <textarea name="message" />
+    <button type="submit">...</button>
+</form>
+```
+
+P.S: Zu dieser Aufgabe gibt es keine automatische Tests
+

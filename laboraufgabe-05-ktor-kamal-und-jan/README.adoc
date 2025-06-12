@@ -1,0 +1,34 @@
+= Web- / Mobile-Technologien: Laboraufgabe V (KW 44)
+Boris Dudelsack <boris.dudelsack@hs-flensburg.de>
+1.0, 2021-10-25
+
+== Gästebuch Applikation mit Ktor
+
+Sie sollen diese Woche eine vereinfachte Gästebuch Applikation mithilfe von Ktor realisieren.
+Die Gästebucheinträge werden durch die Klasse `GuestBookEntry` realisiert und sollen nur im Speicher in
+Form einer `MutableList` abgelegt werden. Bitte beachten Sie folgende Sachen:
+
+* Unter `resources/static` liegen CSS und JS Dateien, die verwendet werden. Ihr server soll diese Dateien ausliefern können.
+* Die Applikation soll bestehende Gästebucheinträge innerhalb des HTML Elements `<section class="guestbook">` anzeigen
+* Die Gästebucheinträge MÜSSEN folgende HTML Struktur aufweisen
+
+```html
+<article>
+    <div class="username">...</div>
+    <div class="date">...</div>
+    <p>...</p>
+</article>
+```
+* Es dürfen weitere Elemente hinzugefügt und CSS-Styling angewendet werden, aber die geforderte HTML-Struktur MUSS existieren
+* Es MUSS eine HTML Form mit folgenden Elementen realisiert werden
+
+```html
+<form method="POST" action="/">
+    <input name="username" />
+    <textarea name="message" />
+</form>
+```
+
+* Auch hier dürfen weitere HTML-Elemente hinzugefügt werden und die CSS-Styling angewendet werden
+
+Die automatische Tests setzten die vorgegebene Strukturen voraus.

@@ -1,0 +1,40 @@
+= Web- / Mobile-Technologien: Laboraufgabe III (KW 40)
+Boris Dudelsack <boris.dudelsack@hs-flensburg.de>
+1.0, 2021-10-04
+
+== Kotlin Sequences
+
+Implementieren Sie die Methode `generateAllPossibleNames`, die aus zwei Sequenzen mit jeweils Vornamen und Nachnamen
+eine Sequenz mit allen möglichen Kombinationen generiert.
+
+```kotlin
+fun generateAllPossibleNames(firstNames: Sequence<String>, lastNames: Sequence<String>): Sequence<String> {
+
+}
+```
+
+*TIPP*: Für die Implementierung werden Sie die Operatoren `flatMap` und `map` benötigen.
+
+== Reactor Mono
+
+Ihnen steht die Klasse `Api` zur Verfügung, die einen asynchronen Request zum Server simuliert. Die Api besitzt zwei Methoden:
+`getUsername(id)` und `getUserEmail(id)`. Implementieren Sie die Methode `getUsernameAndEmail(id)`, die mit Hilfe dieser Api
+einen `User`-Objekt generiert. Da es sich hier um asynchrone Methoden handelt, soll das Ergebniss natürlich auch ein `Mono` sein.
+
+```kotlin
+fun getUsernameAndEmail(id: Number): Mono<User> {
+    val api = Api()
+
+}
+```
+
+== Fibonacci Flux
+
+In der Vorlesung wurde die Fibonacci-Folge mit Hilfe der Kotlin Sequenzen vorgestellt. Implementieren Sie alternativ
+die Methode `fibonacciFlux`, die dafür das Reactor-Framework benutzt.
+
+```kotlin
+fun fibonacciFlux(): Flux<Number> {
+
+}
+```

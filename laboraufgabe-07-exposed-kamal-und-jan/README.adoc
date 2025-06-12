@@ -1,0 +1,9 @@
+= Web- / Mobile-Technologien: Laboraufgabe VII (KW 46)
+Boris Dudelsack <boris.dudelsack@hs-flensburg.de>
+1.0, 2021-11-08
+
+== Book API mit Ktor und Exposend
+
+Nehmen Sie das Projekt von letzte Woche und implementieren Sie die Klasse `BookService` neu. Diese Klasse
+soll die Daten mithilfe der `Exposed`-Library in einer SQLite Datei speichern.
+

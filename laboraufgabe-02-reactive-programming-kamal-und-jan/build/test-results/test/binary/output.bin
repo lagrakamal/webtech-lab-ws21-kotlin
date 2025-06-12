@@ -1,0 +1,8 @@
+h[ INFO] (Test worker) | onSubscribe([Fuseable] FluxSubscribeOnCallable.CallableSubscribeOnSubscription)
++[ INFO] (Test worker) | request(unbounded)
+h[ INFO] (Test worker) | onSubscribe([Fuseable] FluxSubscribeOnCallable.CallableSubscribeOnSubscription)
++[ INFO] (Test worker) | request(unbounded)
+9[ INFO] (parallel-2) | onNext(user00005@hs-flensburg.de)
+$[ INFO] (parallel-2) | onComplete()
+)[ INFO] (parallel-1) | onNext(user00005)
+$[ INFO] (parallel-1) | onComplete()

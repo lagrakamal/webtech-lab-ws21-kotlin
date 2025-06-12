@@ -1,0 +1,26 @@
+= Web- / Mobile-Technologien: Laboraufgabe VI (KW 45)
+Boris Dudelsack <boris.dudelsack@hs-flensburg.de>
+1.0, 2021-11-01
+
+== Book API mit Ktor
+
+Ihnen liegt eine link:./doc/openapi.md[Schnittstellenbeschreibung] der Book REST API vor.
+
+Zusammengefasst werden folgende Methoden verwendet:
+
+* `GET /` - Liefert alles Bücher zurück
+* `POST /` - Erstellt ein neues Buch (bekommt `author` und `title` als JSON-Objekt übergeben)
+* `GET /{uuid}` - Gibt ein Buch nach der `uuid` zurück
+* `POST /{uuid}` - Ändert den Titel und/oder den Author des Buches (bekommt ein JSON-Objekt mit `author` und/oder `title` drin)
+* `DELETE /{uuid}` - Löscht ein Buch
+
+Bitte führen Sie folgende Arbeiten durch:
+
+* Richten Sie die `ContentNegotiation` Feature für die Benutzung mit `kotlinx.serialization` ein
+* Sorgen Sie dafür, dass alle notwendige Klassen serialisierbar sind
+* Ihnen liegt die Klasse `BookService` vor, implementieren Sie mithilfe dieser Klasse die Methoden,
+die in der Schnitstellenbeschreibung definiert sind. Erstellen Sie dabei notwendige Klassen.
+* Überprüfen Sie Ihre Realisierung mithilfe der automatisierten Tests
+* Beachten Sie, dass Sie in den Fällen wo die `uuid` nicht gefunden werden kann den Status Code `404` zurückgeben müssen.
+
+*TIPP:* Sie konnen zum Testen die Schnittstellenbeschreibung aus `doc/openapi.json` in den Postman (https://www.postman.com) importieren.

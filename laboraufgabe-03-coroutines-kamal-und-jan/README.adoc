@@ -1,0 +1,37 @@
+= Web- / Mobile-Technologien: Laboraufgabe III (KW 41)
+Boris Dudelsack <boris.dudelsack@hs-flensburg.de>
+1.0, 2021-11-11
+
+== Coroutine Scope
+
+Verändern Sie die `main`-Methode so, dass die Ausführung von Suspended Functions innerhalb der Methode möglich ist.
+
+== Asynchrone Coroutines
+
+Ihnen steht die Klasse `Api` zur Verfügung, die einen asynchronen Request zum Server simuliert. Die Klasse `Api` besitzt zwei Methoden:
+`getUsername(id)` und `getUserEmail(id)`. Diesmal sind die Methoden der Klasse `Api` als Suspended-Functions definiert. Momentan dauert
+die Ausführung der `getUsernameAndEmail`-Methode über 6 Sekunden. Finden Sie heraus, wie Sie die Methoden asynchron laufen lasssen können
+damit die Ausführung nicht länger als 4,1 Sekunden dauert.
+
+```kotlin
+suspend fun getUsernameAndEmail(id: Number): User {
+    val api = Api()
+
+    val username =  api.getUsername(id)
+    val email = api.getUserEmail(id)
+
+    return User(id, username, email)
+}
+```
+
+== Fibonacci Flow
+
+Schreiben Sie eine Methode namens `fibonacciFlow`. Diese Methode soll einen `Flow` zurückgeben, der mit
+der Fibonacci Folge gefüllt wird.
+
+
+```kotlin
+suspend fun fibonacciFlow(): Flow<Int>  {
+
+}
+```
